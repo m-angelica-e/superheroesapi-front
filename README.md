@@ -1,27 +1,9 @@
-# SuperheroesapiFront
+Se creo un componente table1 donde encontramos 3 botones en la parte superior para definir que tabla se desae ver, dependiendo el boton que se escoge se trae la informacion correspondiente para la tabla, posteriormente se encuentra la tabla con 3 columnas, el nombre, el tipo y las opciones, en las opciones podemos encontrar eliminar o actualizar el superheroe.
+Al seleccionar la opcion actualizar se abre un modal con la informacion del superHeroe precargada enviando al componente edit el id del superheroe a actualizar y consultando al back la informacion del superheroe desde este componente para asi ponerla precargada en el formulario, al momento de actualizar se vuelve a precargar la tabla para mostrarla actualizada y se tiene en cuenta el boton inicial para precargar la informacion correcta.
+Al seleccionar la opcion de eliminar se manda el id al back y se inhabilita de la tabla de datos y alli se precarga la tabla.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.0.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+La informacion se recibe ordenada.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
