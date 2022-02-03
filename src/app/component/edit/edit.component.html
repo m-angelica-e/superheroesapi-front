@@ -1,0 +1,68 @@
+<div style="text-align: end; height: 5px;">
+    <span id="close"style="display: inline-block;" >
+        <a matTooltip="Cerrar" >
+            <i class="material-icons md-28" style="color: red;" (click)="closeDialog()">
+                close
+            </i>
+        </a>
+    </span>
+</div>
+
+<div mat-dialog-content>
+    <h1 align="center">Actualizar</h1>
+    <form [formGroup]="form">
+        <div >
+            <div class="row form-group">
+                <div class="col-md-6" style="text-align: center;">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Nombre*</mat-label>
+                        <input formControlName="name" matInput type="text">
+                        <mat-error *ngIf="form.get('name').invalid">
+                            {{getError("name")}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6" style="text-align: center;">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>¿Esta oculto?**</mat-label>
+                        <mat-select formControlName="hide">
+                            <mat-option *ngFor="let hide of list" [value]="hide">
+                                {{hide}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="userData.get('hide').invalid">
+                            {{getError("hide")}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6" style="text-align: center;">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>¿Esta deshabilitado?*</mat-label>
+                        <mat-select formControlName="disabled">
+                            <mat-option *ngFor="let disabled of list" [value]="disabled">
+                                {{disabled}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="userData.get('disabled').invalid">
+                            {{getError("disabled")}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6" style="text-align: center;">
+                    <mat-form-field appearance="legacy">
+                        <mat-label>Tipo*</mat-label>
+                        <input formControlName="type" matInput type="text">
+                        <mat-error *ngIf="form.get('type').invalid">
+                            {{getError("type")}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div class="d-flex justify-content-center m-1 col-md-12 height: 100%; width=100%">
+            <button class="btn btn-primary btn-block" style="margin-bottom: 20px;"  ng-disabled=false (click)="actionButton()">Actualizar</button>
+        </div>
+    </form>
+</div>

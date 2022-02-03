@@ -1,0 +1,35 @@
+<div class="width-card">
+    <mat-card>
+        <button (click)="table(1)">Tabla 1</button>
+        <button (click)="table(2)">Tabla 2</button>
+        <button (click)="table(3)">Tabla 3</button>
+        <mat-table [dataSource]="dataSource" fixedLayout="true">
+          <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="name"> {{ row.name }} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="type">
+            <mat-header-cell *matHeaderCellDef> Tipo </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="type"> {{ row.type }} </mat-cell>
+          </ng-container>
+          <ng-container matColumnDef="options">
+            <mat-header-cell *matHeaderCellDef> Opciones </mat-header-cell>
+            <mat-cell *matCellDef="let row" data-label="Opciones">
+              <a matTooltip="Actualizar">
+                <i class="material-icons md-28" (click)="openDialogEdit( row.id )">
+                  edit
+                </i>
+              </a>
+              <a matTooltip="Eliminar">
+                <i class="material-icons md-28" (click)="delete( row.id )">
+                  delete
+                </i>
+              </a>
+            </mat-cell>
+          </ng-container>
+          <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: columnsToDisplay;"></mat-row>
+        </mat-table>
+    </mat-card>
+  </div>
+  
